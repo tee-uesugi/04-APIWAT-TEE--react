@@ -4,20 +4,35 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import NavBar from "./Navbar";
 import Home from "./Home";
 import Owner from "./components/Owner";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: <NavBar />,
+    children: [
+      {
+        path: "",
+        element: <Home />,
+      },
+    ],
   },
   {
-    path: "/owner",
-    element: <Owner />,
+    path: "/Owner",
+    element: <NavBar />,
+    children: [
+      {
+        path: "",
+        element: <Owner />,
+      },
+    ],
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <RouterProvider router={router} />
+  <React.StrictMode>
+    <RouterProvider router={router} />
+  </React.StrictMode>
 );
