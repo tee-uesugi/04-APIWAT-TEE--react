@@ -7,6 +7,11 @@ export default function Admin({employees, setEmployees}) {
         position:'',
     });
 
+    const handleDelete = (index) => {
+        const updateEmployees = employees.filter((_, i) => i !== index)
+        setEmployees(updateEmployees)
+    }
+
     const handleChange = (e) => {
         setFormData({
            ...formData,
@@ -67,7 +72,9 @@ export default function Admin({employees, setEmployees}) {
                                     <td>{employee.name}</td>
                                     <td>{employee.lastname}</td>
                                     <td>{employee.position}</td>
+                                    <button onClick={() => handleDelete(index)} >Delete</button>
                                 </tr>
+                               
                             ))}
                         </tbody>
                     </table>

@@ -4,7 +4,7 @@ import { Outlet,Link } from "react-router-dom";
 const NavBar = () => {
   return (
     <div>
-      <nav className="flex justify-between p-4 bg-gray-200">
+      <nav className="p-4 bg-red-300">
         <div>Logo</div>
         <div className="flex space-x-4">
           <Link to="/" className="text-black font-semibold">Home</Link>
