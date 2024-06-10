@@ -7,7 +7,7 @@ export default function Admin({employees, setEmployees}) {
         position:'',
     });
 
-    const handleChange = () => {
+    const handleChange = (e) => {
         setFormData({
            ...formData,
             [e.target.name]: e.target.value
